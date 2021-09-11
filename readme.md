@@ -1,5 +1,5 @@
 # Full stack practice
-- Angular
-- Golang
-- Docker
-- K8S
+- Angular (front-end)
+- Golang (back-end)
+- Docker (image)
+- K8S (deployment pod)
