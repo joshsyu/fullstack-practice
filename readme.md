@@ -5,6 +5,12 @@ This project is a demo for the fullstack development with following technique
 - Docker (image)
 - K8S (deployment pod)
 
+# Step
+1. Build a golang backend service by using echo framework
+2. Port backend service into image
+3. Port image into K8S
+4. Add front-end by using angular framework
+
 ## Git
 
 ### Useful command

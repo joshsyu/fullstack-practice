@@ -9,5 +9,7 @@ WORKDIR /go/src/fullstack-practice
 
 RUN go build .
 
+EXPOSE 1234
+
 ENTRYPOINT ["/bin/sh", "-c"]
 CMD ["/go/src/fullstack-practice/fullstack-practice"]
