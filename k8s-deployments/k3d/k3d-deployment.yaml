@@ -1,0 +1,35 @@
+apiVersion: k3d.io/v1alpha2
+kind: Simple
+name: k3s
+#volumes:
+#  - volume: /Users/joshhsu/Documents/k8s/images:/var/lib/rancher/k3s/agent/images
+#    nodeFilters:
+#      - all
+# - volume: /etc/resolv.conf:/etc/resolv.conf
+#    nodeFilters:
+#      - all
+options:
+  k3d:
+    wait: true
+    disableLoadbalancer: false
+  k3s:
+    extraServerArgs: ["--disable=traefik"]
+ports:
+  - port: 8080:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8443:443
+    nodeFilters:
+      - loadbalancer
+  - port: 30000:30000
+    nodeFilters:
+      - loadbalancer
+registries: # define how registries should be created or used
+#  create: true # creates a default registry to be used with the cluster; same as `--registry-create`
+  use:
+    - k3d-registry.localhost:5000 # some other k3d-managed registry; same as `--registry-use 'k3d-myotherregistry:5000'`
+  config: | # define contents of the `registries.yaml` file (or reference a file); same as `--registry-config /path/to/config.yaml`
+   mirrors:
+      "localhost:5000":
+        endpoint:
+          - http://k3d-registry.localhost:5000
