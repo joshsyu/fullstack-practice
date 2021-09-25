@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "grpcservice/";
+option java_package = "com.grpc.grpcservice";
+package grpcservice;
+
+service GrpcService {
+    rpc simpleRequest (RequestMsg) returns (ReplyMsg) {}
+    rpc streamRequest (stream RequestMsg) returns (ReplyMsg) {}
+    rpc streamReply (RequestMsg) returns (stream ReplyMsg) {}
+    rpc streamRoute (stream RequestMsg) returns (stream ReplyMsg) {}
+}
+message RequestMsg {
+    string ap = 1;
+    string msg = 2;
+}
+
+message ReplyMsg {
+    string status = 1;
+    string msg = 2;
+}
