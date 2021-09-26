@@ -11,6 +11,25 @@ This project is a demo for the fullstack development with following technique
 3. Port image into K8S
 4. Add front-end by using angular framework
 
+# How to use this repo
+
+1. clone the project
+```bash
+git clone https://github.com/joshsyu/fullstack-practice.git
+```
+2. checkout the branch which you try to practice, such as angular
+```bash
+git checkout angular
+```
+3. checkout the tag (commit) which you try to start, such as lecture1-create-angular-project
+```bash
+git checkout lecture1-create-angular-project
+```
+4. checkout to new branch for your own practice, such as my-practice-on-angular
+```bash
+git checkout -b my-practice-on-angular
+```
+
 ## Git
 
 ### Useful command
@@ -91,12 +110,28 @@ git reset commit
 - kubectl exec -it pod -- command
 
 ## Angular
+# Install angular cli
+```bash
+# Download nodejs
+export PATH="$PATH:NODEPATH"
+npm install -g @angular/cli@latest
+```
 ### Useful command
 - ng new project
 - ng new component
 - ng build
 - ng serve --port 8900
 - ng add @angular/material
+
+### Useful package
+ag-grid-community ag-grid-angular
+@angular/flex-layout
+
+### Angular Upgrade
+[Reference](https://update.angular.io/)
+
+### Angular Schematics
+[Reference](https://material.angular.io/guide/schematics)
 
 ## Golang
 ### Useful command
