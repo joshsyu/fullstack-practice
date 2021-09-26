@@ -95,6 +95,11 @@ Reset the current repo to specified commit (state)
 ```bash
 git reset commit
 ```
+- git branch
+Delete unused branch
+```bash
+git branch -D branchName
+```
 ## Docker
 ### Useful command
 - docker build -t tag .
